@@ -4,6 +4,17 @@
     android:layout_height="match_parent" >
 
     <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26dp"
+        android:text="Study"
+        android:height="145dp"
+        android:width="110dp" />
+    
+    <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,25 +38,14 @@
 		android:width="110dp" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="26dp"
-        android:height="145dp"
-        android:text="Study"
-        android:width="110dp" />
-
-    <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button3"
         android:layout_alignBottom="@+id/button3"
         android:layout_alignLeft="@+id/button1"
-        android:height="145dp"
         android:text="Statistics"
+        android:height="145dp"
         android:width="110dp" />
 
 </RelativeLayout>
