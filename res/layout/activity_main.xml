@@ -4,48 +4,43 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/studyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="26dp"
-        android:text="Study"
-        android:height="145dp"
-        android:width="110dp" />
-    
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/OuterGrid"
-        android:layout_alignBottom="@+id/OuterGrid"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
-        android:text="Manage Cards"
-		android:height="145dp"
-		android:width="110dp" />
+        android:height="225dp"
+        android:text="@string/study"
+        android:width="160dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/statisticsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:text="Settings"
-		android:height="145dp"
-		android:width="110dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/studyButton"
+        android:height="225dp"
+        android:text="@string/statistics"
+        android:width="160dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/manageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignLeft="@+id/button1"
-        android:text="Statistics"
-        android:height="145dp"
-        android:width="110dp" />
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/studyButton"
+        android:height="225dp"
+        android:text="@string/manage"
+        android:width="160dp" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/manageButton"
+        android:layout_below="@+id/manageButton"
+        android:height="225dp"
+        android:text="@string/settings"
+        android:width="160dp" />
 
 </RelativeLayout>
