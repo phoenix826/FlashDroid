@@ -22,17 +22,21 @@ public class MainActivity extends Activity {
     
     public void startStudy(View view) {
     	Intent intent = new Intent(this, StudyActivity.class);
+    	startActivity(intent);
     }
     
     public void startManager(View view) {
     	Intent intent = new Intent(this, ManagerActivity.class);
+    	startActivity(intent);
     }
     
     public void startSettings(View view) {
-    	
+    	Intent intent = new Intent(this, SettingsActivity.class);
+    	startActivity(intent);
     }
     
     public void startStats(View view) {
-    	
+    	Intent intent = new Intent(this, StatsActivity.class);
+    	startActivity(intent);
     }
 }
