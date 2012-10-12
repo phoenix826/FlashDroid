@@ -20,11 +20,12 @@ public class MainActivity extends Activity {
     }
     
     public void startStudy(View view) {
-    	setContentView(R.layout.activity_study);
+    	StudyActivity studyView = new StudyActivity();
+    	
     }
     
     public void startManager(View view) {
-    	setContentView(R.layout.activity_manager);
+    	ManagerActivity manageView = new ManagerActivity();
     }
     
     public void startSettings(View view) {

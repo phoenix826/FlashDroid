@@ -8,5 +8,7 @@
     <string name="manage">Manage Cards</string>
     <string name="statistics">Statistics</string>
     <string name="settings">Settings</string>
+    <string name="title_activity_study">StudyActivity</string>
+    <string name="title_activity_manager">ManagerActivity</string>
 
 </resources>
