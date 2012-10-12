@@ -1,7 +1,7 @@
 package com.usability.flashdroid;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 
 public class StudyActivity extends Activity {

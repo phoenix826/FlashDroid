@@ -1,6 +1,7 @@
 package com.usability.flashdroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -20,12 +21,11 @@ public class MainActivity extends Activity {
     }
     
     public void startStudy(View view) {
-    	StudyActivity studyView = new StudyActivity();
-    	
+    	Intent intent = new Intent(this, StudyActivity.class);
     }
     
     public void startManager(View view) {
-    	ManagerActivity manageView = new ManagerActivity();
+    	Intent intent = new Intent(this, ManagerActivity.class);
     }
     
     public void startSettings(View view) {
