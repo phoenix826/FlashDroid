@@ -17,4 +17,20 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
+    
+    public void startStudy() {
+    	
+    }
+    
+    public void startManager() {
+    	
+    }
+    
+    public void startSettings() {
+    	
+    }
+    
+    public void startStats() {
+    	
+    }
 }

@@ -9,8 +9,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:height="225dp"
         android:text="@string/study"
+        android:onClick="startStudy"
+        android:height="225dp"
         android:width="160dp" />
 
     <Button
@@ -19,8 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/studyButton"
-        android:height="225dp"
         android:text="@string/statistics"
+        android:onClick="startStats"
+        android:height="225dp"
         android:width="160dp" />
 
     <Button
@@ -29,8 +31,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/studyButton"
-        android:height="225dp"
         android:text="@string/manage"
+        android:onClick="startManager"
+        android:height="225dp"
         android:width="160dp" />
 
     <Button
@@ -39,8 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/manageButton"
         android:layout_below="@+id/manageButton"
-        android:height="225dp"
         android:text="@string/settings"
+        android:onClick="startSettings"
+        android:height="225dp"
         android:width="160dp" />
 
 </RelativeLayout>
