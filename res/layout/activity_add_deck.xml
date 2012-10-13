@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/save_deck" />
+        android:text="@string/save_deck"
+        android:onClick="saveDeck" />
 
 </RelativeLayout>

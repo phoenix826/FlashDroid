@@ -15,7 +15,7 @@
         tools:context=".ManagerActivity" />
 
     <ListView
-        android:id="@+id/android:list"
+        android:id="@+id/deckList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/addDeck" />
+        android:text="@string/addDeck"
+        android:onClick="addDeck" />
 
 </RelativeLayout>
