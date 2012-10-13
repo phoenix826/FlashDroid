@@ -88,14 +88,14 @@ public class DatabaseAdapter {
 	}
 	
 	public Cursor getAllDecks() {
-		String[] columns = new String[] { DECK_ID_COLUMN, DECK_NAME_COLUMN };
+		String[] columns = getDeckColumns();
 		Cursor records = db.query(DECK_TABLE_NAME, columns, null, null, null, null, null);
 		
 		return records;
 	}
 	
 	public Cursor getDeckById(long id) {
-		String[] columns = new String[] { DECK_ID_COLUMN, DECK_NAME_COLUMN };
+		String[] columns = getDeckColumns();
 		String whereClause = DECK_ID_COLUMN + "=" + id;
 		
 		Cursor cursor = db.query(true, DECK_TABLE_NAME, columns, whereClause, null, null, null, null, null);
@@ -132,7 +132,7 @@ public class DatabaseAdapter {
 	}
 	
 	public Cursor getAllCardsByDeckId(long deckId) {
-		String[] columns = new String[] { CARD_ID_COLUMN, CARD_DECK_ID_COLUMN, CARD_TERM_COLUMN, CARD_DEFINITION_COLUMN };
+		String[] columns = getCardColumns();
 		String whereClause = CARD_DECK_ID_COLUMN + "=" + deckId;
 		Cursor records = db.query(CARD_TABLE_NAME, columns, whereClause, null, null, null, null);
 		
@@ -140,7 +140,7 @@ public class DatabaseAdapter {
 	}
 	
 	public Cursor getCardById(long id) {
-		String[] columns = new String[] { CARD_ID_COLUMN, CARD_DECK_ID_COLUMN, CARD_TERM_COLUMN, CARD_DEFINITION_COLUMN };
+		String[] columns = getCardColumns();
 		String whereClause = CARD_ID_COLUMN + "=" + id;
 		
 		Cursor cursor = db.query(true, CARD_TABLE_NAME, columns, whereClause, null, null, null, null, null);
@@ -150,5 +150,13 @@ public class DatabaseAdapter {
 		}
 		
 		return cursor;
+	}
+	
+	private String[] getDeckColumns() {
+		return new String[] { DECK_ID_COLUMN, DECK_NAME_COLUMN };
+	}
+	
+	private String[] getCardColumns() {
+		return new String[] { CARD_ID_COLUMN, CARD_DECK_ID_COLUMN, CARD_TERM_COLUMN, CARD_DEFINITION_COLUMN };
 	}
 }
