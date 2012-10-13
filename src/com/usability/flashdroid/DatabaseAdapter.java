@@ -1,6 +1,8 @@
 package com.usability.flashdroid;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -53,5 +55,51 @@ public class DatabaseAdapter {
 
 		}
 		
+	}
+	
+	public DatabaseAdapter open() {
+		db = dbHelper.getWritableDatabase();
+		return this;
+	}
+	
+	public void close() {
+		db.close();
+	}
+	
+	public long insertDeck(String name) {
+		ContentValues values = new ContentValues();
+		values.put(DECK_ID_COLUMN, name);
+		return db.insert(DECK_TABLE_NAME, null, values);
+	}
+	
+	public boolean deleteDeck(long id) {
+		String whereClause = DECK_ID_COLUMN + "=" + id;
+		return db.delete(DECK_TABLE_NAME, whereClause, null) > 0;
+	}
+	
+	public boolean updateDeck(long id, String name) {
+		ContentValues values = new ContentValues();
+		String whereClause = DECK_ID_COLUMN + "=" + id;
+		values.put(DECK_NAME_COLUMN, name);
+		return db.update(DECK_TABLE_NAME, values, whereClause, null) > 0;
+	}
+	
+	public Cursor getAllDecks() {
+		String[] columns = new String[] { DECK_ID_COLUMN, DECK_NAME_COLUMN };
+		Cursor records = db.query(DECK_TABLE_NAME, columns, null, null, null, null, null);
+		return records;
+	}
+	
+	public Cursor getDeckById(long id) {
+		String[] columns = new String[] { DECK_ID_COLUMN, DECK_NAME_COLUMN };
+		String whereClause = DECK_ID_COLUMN + "=" + id;
+		
+		Cursor cursor = db.query(true, DECK_TABLE_NAME, columns, whereClause, null, null, null, null, null);
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+		}
+		
+		return cursor;
 	}
 }
