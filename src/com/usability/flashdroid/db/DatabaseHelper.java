@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	public static final String DATABASE_NAME = "flashdroid";
-	public static final int DATABASE_VERSION = 1;
+	public static final int DATABASE_VERSION = 2;
 	
 	public static final String DECK_TABLE_NAME  = "decks";
 	public static final String DECK_ID_COLUMN   = "_id";
@@ -20,10 +20,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public static final String CARD_DEFINITION_COLUMN = "definition";
 	
 	private static final String CREATE_DECK_TABLE_SQL = "create table if not exists "
-		+ DECK_TABLE_NAME + " (id integer primary key autoincrement, name VARCHAR);";
+		+ DECK_TABLE_NAME + " (_id integer primary key autoincrement, name VARCHAR);";
 	
 	private static final String CREATE_CARD_TABLE_SQL = "create table if not exists "
-		+ CARD_TABLE_NAME + " (id integer primary key autoincrement, deck_id integer, "
+		+ CARD_TABLE_NAME + " (_id integer primary key autoincrement, deck_id integer, "
 		+ "term VARCHAR, definition VARCHAR);";
 	
 	public DatabaseHelper(Context context) {
@@ -38,7 +38,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+	    db.execSQL("DROP TABLE IF EXISTS " + DECK_TABLE_NAME);
+	    db.execSQL("DROP TABLE IF EXISTS " + CARD_TABLE_NAME);
+	    onCreate(db);
 	}
 	
 	/*
