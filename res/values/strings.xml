@@ -18,5 +18,10 @@
     <string name="total_flips">Total Flips:</string>
     <string name="total_cards_viewed">Total Cards Viewed:</string>
     <string name="decks_used">Decks Used:</string>
-    
+    <string name="addDeck">Add</string>
+    <string name="title_activity_add_deck">AddDeckActivity</string>
+    <string name="new_deck">New Deck</string>
+    <string name="deck_name">Name</string>
+    <string name="save_deck">Save</string>
+
 </resources>

@@ -22,4 +22,12 @@
         android:layout_below="@+id/header" >
     </ListView>
 
+    <Button
+        android:id="@+id/addDeck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/addDeck" />
+
 </RelativeLayout>

@@ -20,7 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:label="@string/manage" android:name="ManagerActivity" />
+        <activity
+            android:name="ManagerActivity"
+            android:label="@string/manage" />
+        <activity
+            android:name=".AddDeckActivity"
+            android:label="@string/title_activity_add_deck" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.usability.flashdroid.ManagerActivity" />
+        </activity>
     </application>
 
 </manifest>
