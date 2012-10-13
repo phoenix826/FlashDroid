@@ -1,4 +1,4 @@
-package com.usability.flashdroid;
+package com.usability.flashdroid.db;
 
 import android.content.ContentValues;
 import android.content.Context;
