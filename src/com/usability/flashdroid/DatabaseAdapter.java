@@ -18,7 +18,7 @@ public class DatabaseAdapter {
 
 	public static final String CARD_TABLE_NAME        = "cards";
 	public static final String CARD_ID_COLUMN         = "id";
-	public static final String CARD_TABLE_ID_COLUMN   = "deck_id";
+	public static final String CARD_DECK_ID_COLUMN    = "deck_id";
 	public static final String CARD_TERM_COLUMN       = "term";
 	public static final String CARD_DEFINITION_COLUMN = "definition";
 	
@@ -68,12 +68,14 @@ public class DatabaseAdapter {
 	
 	public long insertDeck(String name) {
 		ContentValues values = new ContentValues();
-		values.put(DECK_ID_COLUMN, name);
+		values.put(DECK_NAME_COLUMN, name);
+		
 		return db.insert(DECK_TABLE_NAME, null, values);
 	}
 	
 	public boolean deleteDeck(long id) {
 		String whereClause = DECK_ID_COLUMN + "=" + id;
+		
 		return db.delete(DECK_TABLE_NAME, whereClause, null) > 0;
 	}
 	
@@ -81,12 +83,14 @@ public class DatabaseAdapter {
 		ContentValues values = new ContentValues();
 		String whereClause = DECK_ID_COLUMN + "=" + id;
 		values.put(DECK_NAME_COLUMN, name);
+		
 		return db.update(DECK_TABLE_NAME, values, whereClause, null) > 0;
 	}
 	
 	public Cursor getAllDecks() {
 		String[] columns = new String[] { DECK_ID_COLUMN, DECK_NAME_COLUMN };
 		Cursor records = db.query(DECK_TABLE_NAME, columns, null, null, null, null, null);
+		
 		return records;
 	}
 	
@@ -95,6 +99,51 @@ public class DatabaseAdapter {
 		String whereClause = DECK_ID_COLUMN + "=" + id;
 		
 		Cursor cursor = db.query(true, DECK_TABLE_NAME, columns, whereClause, null, null, null, null, null);
+		
+		if (cursor != null) {
+			cursor.moveToFirst();
+		}
+		
+		return cursor;
+	}
+	
+	public long insertCard(long deckId, String term, String definition) {
+		ContentValues values = new ContentValues();
+		values.put(CARD_DECK_ID_COLUMN, deckId);
+		values.put(CARD_TERM_COLUMN, term);
+		values.put(CARD_DEFINITION_COLUMN, definition);
+		
+		return db.insert(CARD_TABLE_NAME, null, values);
+	}
+	
+	public boolean deleteCard(long id) {
+		String whereClause = CARD_ID_COLUMN + "=" + id;
+		
+		return db.delete(CARD_TABLE_NAME, whereClause, null) > 0;
+	}
+	
+	public boolean updateCard(long id, String term, String definition) {
+		ContentValues values = new ContentValues();
+		String whereClause = CARD_ID_COLUMN + "=" + id;
+		values.put(CARD_TERM_COLUMN, term);
+		values.put(CARD_DEFINITION_COLUMN, definition);
+		
+		return db.update(DECK_TABLE_NAME, values, whereClause, null) > 0;
+	}
+	
+	public Cursor getAllCardsByDeckId(long deckId) {
+		String[] columns = new String[] { CARD_ID_COLUMN, CARD_DECK_ID_COLUMN, CARD_TERM_COLUMN, CARD_DEFINITION_COLUMN };
+		String whereClause = CARD_DECK_ID_COLUMN + "=" + deckId;
+		Cursor records = db.query(CARD_TABLE_NAME, columns, whereClause, null, null, null, null);
+		
+		return records;
+	}
+	
+	public Cursor getCardById(long id) {
+		String[] columns = new String[] { CARD_ID_COLUMN, CARD_DECK_ID_COLUMN, CARD_TERM_COLUMN, CARD_DEFINITION_COLUMN };
+		String whereClause = CARD_ID_COLUMN + "=" + id;
+		
+		Cursor cursor = db.query(true, CARD_TABLE_NAME, columns, whereClause, null, null, null, null, null);
 		
 		if (cursor != null) {
 			cursor.moveToFirst();
