@@ -1,19 +1,27 @@
 package com.usability.flashdroid;
 
+import com.usability.flashdroid.data_source.CardDataSource;
 import com.usability.flashdroid.data_source.DeckDataSource;
+import com.usability.flashdroid.db.DatabaseHelper;
 import com.usability.flashdroid.model.Deck;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.support.v4.app.NavUtils;
+import android.support.v4.widget.SimpleCursorAdapter;
 
 public class ManageCardsActivity extends Activity {
 	
+	private Deck currentDeck;
 	private DeckDataSource deckSource;
+	private CardDataSource cardSource;
+	private ListView cardList;
+	private BaseAdapter adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,16 +29,21 @@ public class ManageCardsActivity extends Activity {
         setContentView(R.layout.activity_manage_cards);
         
         this.deckSource = new DeckDataSource(this);
+        this.cardSource = new CardDataSource(this);
+        
+        this.cardList = (ListView) findViewById(R.id.cardList);
         
         Bundle extras = getIntent().getExtras();
         long id = extras.getLong("deckId");
         
         deckSource.open();
-        Deck deck = deckSource.getDeckById(id);
+        this.currentDeck = deckSource.getDeckById(id);
         deckSource.close();
         
+        setListViewAdapter();
+        
         TextView textView = (TextView) findViewById(R.id.cardsHeader);
-        textView.setText(deck.getName());
+        textView.setText(this.currentDeck.getName());
     }
 
     @Override
@@ -48,6 +61,18 @@ public class ManageCardsActivity extends Activity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+	private void setListViewAdapter() {
+        String[] columns = new String[] { DatabaseHelper.CARD_TERM_COLUMN };
+        int[] to = new int[] { R.id.cardName };
+        
+        cardSource.open();
+        this.adapter = new SimpleCursorAdapter(ManageCardsActivity.this,
+        	R.layout.card_list_entry, cardSource.getCardsByDeckId(currentDeck.getId()),
+            columns, to, 1);
+        cardList.setAdapter(this.adapter);
+        deckSource.close();
     }
 
 }

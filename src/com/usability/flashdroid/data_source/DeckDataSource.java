@@ -8,25 +8,14 @@ import com.usability.flashdroid.model.Deck;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 
-public class DeckDataSource {
+public class DeckDataSource extends DataSource {
 
-	private SQLiteDatabase db;
-	private DatabaseHelper dbHelper;
 	private String[] columns = { DatabaseHelper.DECK_ID_COLUMN,
 			DatabaseHelper.DECK_NAME_COLUMN };
 
 	public DeckDataSource(Context context) {
-		this.dbHelper = new DatabaseHelper(context);
-	}
-
-	public void open() {
-		db = dbHelper.getWritableDatabase();
-	}
-
-	public void close() {
-		dbHelper.close();
+		super(context);
 	}
 
 	public Deck createDeck(String name) {
