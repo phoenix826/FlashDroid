@@ -23,5 +23,7 @@
     <string name="new_deck">New Deck</string>
     <string name="deck_name">Name</string>
     <string name="save_deck">Save</string>
+    <string name="title_activity_manage_cards">ManageCardsActivity</string>
+    <string name="cards">Cards</string>
 
 </resources>

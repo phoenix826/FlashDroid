@@ -30,6 +30,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.usability.flashdroid.ManagerActivity" />
         </activity>
+        <activity
+            android:name=".ManageCardsActivity"
+            android:label="@string/title_activity_manage_cards" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.usability.flashdroid.ManagerActivity" />
+        </activity>
     </application>
 
 </manifest>

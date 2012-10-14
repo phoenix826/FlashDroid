@@ -44,7 +44,6 @@ public class ManagerActivity extends Activity {
         setContentView(R.layout.activity_manager);
         
         this.deckSource = new DeckDataSource(this);
-        
         this.deckList = (ListView) findViewById(R.id.deckList);
         
         setListViewAdapter();
@@ -52,18 +51,19 @@ public class ManagerActivity extends Activity {
         
         deckList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				//Intent intent = new Intent(ManagerActivity.this, ManageCards.class);
-				//ManagerActivity.this.startActivity(intent);
+				Intent intent = new Intent(ManagerActivity.this, ManageCardsActivity.class);
+				intent.putExtra("deckId", id);
+				ManagerActivity.this.startActivity(intent);
           	
-				deckSource.open();
-				Deck d = deckSource.getDeckById(id);
-				deckSource.close();
+				// deckSource.open();
+				// Deck d = deckSource.getDeckById(id);
+				// deckSource.close();
 				
-            	CharSequence text = "You clicked Deck id: " + d.getId() + ", name: " + d.getName();
-            	int duration = Toast.LENGTH_LONG;
+            	// CharSequence text = "You clicked Deck id: " + d.getId() + ", name: " + d.getName();
+            	// int duration = Toast.LENGTH_LONG;
 
-            	Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-            	toast.show();
+            	// Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+            	// toast.show();
 			}
 		});
     }
@@ -77,7 +77,8 @@ public class ManagerActivity extends Activity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
     	if (view.getId() == R.id.deckList) {
-    		menu.add(Menu.NONE, 0, 0, "Remove deck");
+    		menu.add(Menu.NONE, 0, 1, "Edit");
+    		menu.add(Menu.NONE, 0, 2, "Delete");
     	}
     }
     
@@ -110,7 +111,7 @@ public class ManagerActivity extends Activity {
             	Toast toast = Toast.makeText(getApplicationContext(), "Deck deleted", Toast.LENGTH_LONG);
             	toast.show();
             	
-            	// Notifying the adapter that the data set has changed doesn't refresh the ListView
+            	// Refresh the list by setting the adapter again
             	setListViewAdapter();
 			}
 		});
