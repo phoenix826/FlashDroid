@@ -59,6 +59,13 @@ public class DeckDataSource {
 		cursor.close();
 		return decks;
 	}
+	
+	public Cursor getAllDecksCursor() {
+		Cursor cursor = db.query(DatabaseHelper.DECK_TABLE_NAME, columns, null,
+				null, null, null, null);
+
+		return cursor;
+	}
 
 	public boolean deleteDeck(Deck deck) {
 		long id = deck.getId();

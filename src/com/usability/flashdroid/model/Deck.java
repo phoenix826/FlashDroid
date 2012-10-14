@@ -5,6 +5,10 @@ public class Deck {
 	private long id;
 	private String name;
 	
+	public Deck() {
+		
+	}
+	
 	public Deck(long id, String name) {
 		this.id = id;
 		this.name = name;
