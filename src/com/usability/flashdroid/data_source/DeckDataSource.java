@@ -55,6 +55,14 @@ public class DeckDataSource extends DataSource {
 
 		return cursor;
 	}
+	
+	public boolean updateDeck(long id, String name) {
+		ContentValues values = new ContentValues();
+		String whereClause = DatabaseHelper.DECK_ID_COLUMN + "=" + id;
+		values.put(DatabaseHelper.DECK_NAME_COLUMN, name);
+		
+		return db.update(DatabaseHelper.DECK_TABLE_NAME, values, whereClause, null) > 0;
+	}
 
 	public boolean deleteDeck(Deck deck) {
 		long id = deck.getId();

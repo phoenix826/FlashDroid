@@ -32,5 +32,6 @@
     <string name="statisticsLabel">Statistics</string>
     <string name="settingsLabel">Settings</string>
     <string name="title_activity_edit_deck">EditDeckActivity</string>
+    <string name="edit_deck">Edit Deck</string>
 
 </resources>
