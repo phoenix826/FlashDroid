@@ -27,5 +27,9 @@
     <string name="cards">Cards</string>
     <string name="title_activity_add_card">AddCardActivity</string>
     <string name="definition">Definition</string>
+    <string name="studyLabel">Study</string>
+    <string name="manageLabel">Manage</string>
+    <string name="statisticsLabel">Statistics</string>
+    <string name="settingsLabel">Settings</string>
 
 </resources>

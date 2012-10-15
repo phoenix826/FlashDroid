@@ -64,4 +64,48 @@
         android:background="#00000000" 
         android:width="160dp" />
     
+    <TextView
+        android:id="@+id/studyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/manageText"
+        android:layout_alignBottom="@+id/manageText"
+        android:layout_alignRight="@+id/statisticsText"
+        android:layout_marginRight="18dp"
+        android:text="@string/studyLabel"
+        android:textSize="20dp" />
+    
+    <TextView
+        android:id="@+id/manageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/manageButton"
+        android:layout_below="@+id/manageButton"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/manageLabel"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/statisticsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/statisticsButton"
+        android:layout_below="@+id/settingsButton"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/statisticsLabel"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/statisticsText"
+        android:layout_alignBottom="@+id/statisticsText"
+        android:layout_alignRight="@+id/manageText"
+        android:layout_marginRight="2dp"
+        android:text="@string/settingsLabel"
+        android:textSize="20dp" />
+    
 </RelativeLayout>
