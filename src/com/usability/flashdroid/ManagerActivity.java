@@ -77,47 +77,59 @@ public class ManagerActivity extends Activity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
     	if (view.getId() == R.id.deckList) {
-    		menu.add(Menu.NONE, 0, 1, "Edit");
-    		menu.add(Menu.NONE, 0, 2, "Delete");
+    		menu.add(Menu.NONE, 1, 1, "Edit");
+    		menu.add(Menu.NONE, 2, 2, "Delete");
     	}
     }
     
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+    	int position = item.getItemId();
     	AdapterContextMenuInfo itemInfo = (AdapterContextMenuInfo) item.getMenuInfo();
-    	deckSource.open();
-    	final Deck selectedDeck = deckSource.getDeckById(itemInfo.id);
-    	deckSource.close();
     	
-    	AlertDialog.Builder dialog = new AlertDialog.Builder(ManagerActivity.this);
-    	
-    	dialog.setTitle("Are you sure?");
-    	dialog.setMessage("Are you sure you wish to delete deck '" + selectedDeck.getName() + "'?");
-    	
-    	dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int id) {
-				dialog.cancel();
-			}
-		});
-    	
-    	dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int id) {
-				deckSource.open();
-				deckSource.deleteDeck(selectedDeck);
-				deckSource.close();
-				
-				dialog.cancel();
-				
-            	Toast toast = Toast.makeText(getApplicationContext(), "Deck deleted", Toast.LENGTH_LONG);
+    	switch (position) {
+    		case 1:
+            	Toast toast = Toast.makeText(getApplicationContext(), "You selected Edit", Toast.LENGTH_LONG);
             	toast.show();
-            	
-            	// Refresh the list by setting the adapter again
-            	setListViewAdapter();
-			}
-		});
-    	
-    	AlertDialog alertDialog = dialog.create();
-    	alertDialog.show();
+    			
+    		case 2:
+    	    	deckSource.open();
+    	    	final Deck selectedDeck = deckSource.getDeckById(itemInfo.id);
+    	    	deckSource.close();
+    	    	
+    	    	AlertDialog.Builder dialog = new AlertDialog.Builder(ManagerActivity.this);
+    	    	
+    	    	dialog.setTitle("Are you sure?");
+    	    	dialog.setMessage("Are you sure you wish to delete deck '" + selectedDeck.getName() + "'?");
+    	    	
+    	    	dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+    				public void onClick(DialogInterface dialog, int id) {
+    					dialog.cancel();
+    				}
+    			});
+    	    	
+    	    	dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    				public void onClick(DialogInterface dialog, int id) {
+    					deckSource.open();
+    					deckSource.deleteDeck(selectedDeck);
+    					deckSource.close();
+    					
+    					dialog.cancel();
+    					
+    	            	Toast toast = Toast.makeText(getApplicationContext(), "Deck deleted", Toast.LENGTH_LONG);
+    	            	toast.show();
+    	            	
+    	            	// Refresh the list by setting the adapter again
+    	            	setListViewAdapter();
+    				}
+    			});
+    	    	
+    	    	AlertDialog alertDialog = dialog.create();
+    	    	alertDialog.show();
+    	    	
+    	    	break;
+    	}
+
     	
     	return true;
     }
