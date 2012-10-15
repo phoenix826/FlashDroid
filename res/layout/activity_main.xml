@@ -1,7 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+   	android:orientation="vertical" 
+    android:background="@drawable/main_menu_background">
 
     <ImageButton
         android:id="@+id/studyButton"
@@ -73,7 +75,8 @@
         android:layout_alignRight="@+id/statisticsText"
         android:layout_marginRight="18dp"
         android:text="@string/studyLabel"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="#EEE" />
     
     <TextView
         android:id="@+id/manageText"
@@ -84,7 +87,8 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="3dp"
         android:text="@string/manageLabel"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="#EEE" />
 
     <TextView
         android:id="@+id/statisticsText"
@@ -95,7 +99,8 @@
         android:layout_marginRight="17dp"
         android:layout_marginTop="3dp"
         android:text="@string/statisticsLabel"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="#EEE" />
 
     <TextView
         android:id="@+id/settingsText"
@@ -106,6 +111,7 @@
         android:layout_alignRight="@+id/manageText"
         android:layout_marginRight="2dp"
         android:text="@string/settingsLabel"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textColor="#EEE" />
     
 </RelativeLayout>
