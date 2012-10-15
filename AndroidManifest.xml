@@ -21,6 +21,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="StudyActivity"
+            android:label="@string/title_activity_study" />
+        <activity
+            android:name="StatsActivity"
+            android:label="@string/title_activity_stats" />
+        <activity
+            android:name="SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
             android:name="ManagerActivity"
             android:label="@string/manage" />
         <activity
