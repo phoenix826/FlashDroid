@@ -20,5 +20,14 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/cardsHeader" >
     </ListView>
+    
+    <Button
+        android:id="@+id/addCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/addDeck"
+        android:onClick="addCard" />
 
 </RelativeLayout>

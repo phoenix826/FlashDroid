@@ -7,8 +7,10 @@ import com.usability.flashdroid.model.Deck;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -61,6 +63,12 @@ public class ManageCardsActivity extends Activity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void addCard(View view) {
+		Intent newIntent = new Intent(ManageCardsActivity.this, AddCardActivity.class);
+		newIntent.putExtra("deckId", currentDeck.getId());
+		ManageCardsActivity.this.startActivity(newIntent);
     }
     
 	private void setListViewAdapter() {
