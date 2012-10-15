@@ -65,10 +65,16 @@ public class ManageCardsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
+    @Override
+    public void onBackPressed() {
+    	Intent newIntent = new Intent(this, ManagerActivity.class);
+    	startActivity(newIntent);
+    }
+    
     public void addCard(View view) {
-		Intent newIntent = new Intent(ManageCardsActivity.this, AddCardActivity.class);
+		Intent newIntent = new Intent(this, AddCardActivity.class);
 		newIntent.putExtra("deckId", currentDeck.getId());
-		ManageCardsActivity.this.startActivity(newIntent);
+		startActivity(newIntent);
     }
     
 	private void setListViewAdapter() {

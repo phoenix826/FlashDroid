@@ -122,6 +122,12 @@ public class ManagerActivity extends Activity {
     	return true;
     }
     
+    @Override
+    public void onBackPressed() {
+    	Intent newIntent = new Intent(this, MainActivity.class);
+    	startActivity(newIntent);
+    }
+    
     public void addDeck(View view) {
 		Intent newIntent = new Intent(ManagerActivity.this, AddDeckActivity.class);
 		ManagerActivity.this.startActivity(newIntent);
