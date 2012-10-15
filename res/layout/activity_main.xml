@@ -3,48 +3,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
+    <ImageButton
         android:id="@+id/studyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="@string/study"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="15dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/study"
+        android:height="225dp"
         android:onClick="startStudy"
-        android:height="225dp"
+        android:src="@drawable/ic_main_screen_button"
+        android:text="@string/study"
+        android:background="#00000000"
         android:width="160dp" />
 
-    <Button
-        android:id="@+id/statisticsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/studyButton"
-        android:text="@string/statistics"
-        android:onClick="startStats"
-        android:height="225dp"
-        android:width="160dp" />
-
-    <Button
+    <ImageButton
         android:id="@+id/manageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/studyButton"
-        android:text="@string/manage"
-        android:onClick="startManager"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/studyButton"
+        android:contentDescription="@string/manage"
         android:height="225dp"
+        android:onClick="startManager"
+        android:src="@drawable/ic_main_screen_button"
+        android:text="@string/manage"
+        android:background="#00000000"
         android:width="160dp" />
-
-    <Button
+    
+    <ImageButton
+        android:id="@+id/statisticsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="55dp"
+        android:layout_alignLeft="@+id/studyButton"
+        android:contentDescription="@string/statistics"
+        android:height="225dp"
+        android:onClick="startStats"
+        android:src="@drawable/ic_main_screen_button"
+        android:text="@string/statistics"
+        android:background="#00000000" 
+        android:width="160dp" />
+    
+    <ImageButton
         android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/manageButton"
-        android:layout_below="@+id/manageButton"
-        android:text="@string/settings"
-        android:onClick="startSettings"
+        android:layout_alignRight="@+id/manageButton"
+        android:layout_alignBottom="@+id/statisticsButton"
+        android:contentDescription="@string/settings"
         android:height="225dp"
+        android:onClick="startSettings"
+        android:src="@drawable/ic_main_screen_button"
+        android:text="@string/settings"
+        android:background="#00000000" 
         android:width="160dp" />
-
+    
 </RelativeLayout>
