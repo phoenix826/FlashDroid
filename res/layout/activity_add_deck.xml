@@ -23,6 +23,7 @@
         android:layout_marginTop="42dp"
         android:ems="10"
         android:hint="@string/deck_name"
+        android:background="@drawable/edit_text_border"
         android:inputType="text" >
 
         <requestFocus />

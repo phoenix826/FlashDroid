@@ -12,7 +12,8 @@
         android:layout_marginTop="72dp"
         android:ems="10"
         android:inputType="text"
-        android:hint="@string/term" />
+        android:hint="@string/term"
+        android:background="@drawable/edit_text_border" />
 
         <requestFocus />
 
@@ -25,7 +26,9 @@
         android:layout_marginTop="38dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:hint="@string/definition" />
+        android:hint="@string/definition"
+        android:background="@drawable/edit_text_border"
+        android:singleLine="false" />
     
     <Button
         android:id="@+id/saveCard"
