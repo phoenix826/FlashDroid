@@ -82,7 +82,7 @@
         android:layout_alignRight="@+id/manageButton"
         android:layout_below="@+id/manageButton"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="3dp"
         android:text="@string/manageLabel"
         android:textSize="20dp" />
 
@@ -93,7 +93,7 @@
         android:layout_alignRight="@+id/statisticsButton"
         android:layout_below="@+id/settingsButton"
         android:layout_marginRight="17dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="3dp"
         android:text="@string/statisticsLabel"
         android:textSize="20dp" />
 
@@ -102,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/statisticsText"
-        android:layout_alignBottom="@+id/statisticsText"
+        android:layout_alignTop="@+id/statisticsText"
         android:layout_alignRight="@+id/manageText"
         android:layout_marginRight="2dp"
         android:text="@string/settingsLabel"
