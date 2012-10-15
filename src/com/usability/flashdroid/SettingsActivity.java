@@ -1,3 +1,7 @@
+/*
+ * Settings Activity
+ */
+
 package com.usability.flashdroid;
 
 import android.os.Bundle;
