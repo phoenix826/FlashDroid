@@ -87,16 +87,19 @@ public class ManagerActivity extends Activity {
     	int position = item.getItemId();
     	AdapterContextMenuInfo itemInfo = (AdapterContextMenuInfo) item.getMenuInfo();
     	
+    	deckSource.open();
+    	final Deck selectedDeck = deckSource.getDeckById(itemInfo.id);
+    	deckSource.close();
+    	
     	switch (position) {
     		case 1:
-            	Toast toast = Toast.makeText(getApplicationContext(), "You selected Edit", Toast.LENGTH_LONG);
-            	toast.show();
-    			
+    	    	Intent newIntent = new Intent(this, EditDeckActivity.class);
+    	    	newIntent.putExtra("deckId", selectedDeck.getId());
+    	    	startActivity(newIntent);
+            	
+            	break;
+            	
     		case 2:
-    	    	deckSource.open();
-    	    	final Deck selectedDeck = deckSource.getDeckById(itemInfo.id);
-    	    	deckSource.close();
-    	    	
     	    	AlertDialog.Builder dialog = new AlertDialog.Builder(ManagerActivity.this);
     	    	
     	    	dialog.setTitle("Are you sure?");
