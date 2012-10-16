@@ -89,7 +89,35 @@ public class ManageCardsActivity extends Activity {
             	break;
             	
     		case 2:
-    			
+    	    	AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+    	    	
+    	    	dialog.setTitle("Are you sure?");
+    	    	dialog.setMessage("Are you sure you wish to delete card '" + selectedCard.getTerm() + "'?");
+    	    	
+    	    	dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+    				public void onClick(DialogInterface dialog, int id) {
+    					dialog.cancel();
+    				}
+    			});
+    	    	
+    	    	dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    				public void onClick(DialogInterface dialog, int id) {
+    					cardSource.open();
+    					cardSource.deleteCard(selectedCard);
+    					cardSource.close();
+    					
+    					dialog.cancel();
+    					
+    	            	Toast toast = Toast.makeText(getApplicationContext(), "Card deleted", Toast.LENGTH_LONG);
+    	            	toast.show();
+    	            	
+    	            	// Refresh the list by setting the adapter again
+    	            	setListViewAdapter();
+    				}
+    			});
+    	    	
+    	    	AlertDialog alertDialog = dialog.create();
+    	    	alertDialog.show();
     	    	
     	    	break;
     	}
