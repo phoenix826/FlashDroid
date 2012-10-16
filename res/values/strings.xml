@@ -35,5 +35,8 @@
     <string name="edit_deck">Edit Deck</string>
     <string name="next">Next</string>
     <string name="flip">Flip</string>
+    <string name="timer_length">Study Session Timer:</string>
+    <string name="random_background_color">Random Color Scheme:</string>
+    <string name="flip_timeout">Time Until Auto-Flip:</string>
 
 </resources>

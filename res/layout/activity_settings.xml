@@ -7,27 +7,52 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/timer_length"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:context=".SettingsActivity" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/set_timer_length"
-        tools:context=".SettingsActivity" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="78dp"
         android:text="@string/random_background_color"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         tools:context=".SettingsActivity" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="57dp"
+        android:layout_marginTop="73dp"
         android:text="@string/flip_timeout"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         tools:context=".SettingsActivity" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="#000000"
+        android:shadowDx="-12"
+        android:shadowDy="-12"
+        android:shadowRadius="5" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="time" />
 
 </RelativeLayout>
