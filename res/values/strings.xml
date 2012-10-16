@@ -38,5 +38,8 @@
     <string name="timer_length">Study Session Timer:</string>
     <string name="random_background_color">Random Color Scheme:</string>
     <string name="flip_timeout">Time Until Auto-Flip:</string>
+    <string name="statHeader">Statistics By Date</string>
+    <string name="title_activity_edit_card">EditCardActivity</string>
+    <string name="add_card">Add A Card</string>
 
 </resources>

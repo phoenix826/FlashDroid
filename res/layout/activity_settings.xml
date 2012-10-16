@@ -3,56 +3,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:text="@string/timer_length"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:context=".SettingsActivity" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/random_background_color"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:context=".SettingsActivity" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:text="@string/flip_timeout"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:context=".SettingsActivity" />
-
     <CheckBox
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:shadowColor="#000000"
         android:shadowDx="-12"
         android:shadowDy="-12"
         android:shadowRadius="5" />
 
-    <EditText
-        android:id="@+id/editText1"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:inputType="time" />
+        android:layout_marginBottom="78dp"
+        android:text="@string/random_background_color"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:context=".SettingsActivity" />
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_marginBottom="14dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timePicker1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="@string/flip_timeout"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:context=".SettingsActivity" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/timer_length"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:context=".SettingsActivity" />
+
+    <TimePicker
+        android:id="@+id/TimePicker01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

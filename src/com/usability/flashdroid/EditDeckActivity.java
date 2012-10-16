@@ -44,7 +44,6 @@ public class EditDeckActivity extends Activity {
     public void saveDeck(View view) {
         deckSource = new DeckDataSource(this);
         
-        
 		EditText deckNameText = (EditText) findViewById(R.id.deckNameText);
 		String deckName = deckNameText.getText().toString();
 		

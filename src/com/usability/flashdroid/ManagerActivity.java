@@ -54,16 +54,6 @@ public class ManagerActivity extends Activity {
 				Intent intent = new Intent(ManagerActivity.this, ManageCardsActivity.class);
 				intent.putExtra("deckId", id);
 				ManagerActivity.this.startActivity(intent);
-          	
-				// deckSource.open();
-				// Deck d = deckSource.getDeckById(id);
-				// deckSource.close();
-				
-            	// CharSequence text = "You clicked Deck id: " + d.getId() + ", name: " + d.getName();
-            	// int duration = Toast.LENGTH_LONG;
-
-            	// Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-            	// toast.show();
 			}
 		});
     }

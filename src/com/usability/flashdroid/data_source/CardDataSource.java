@@ -30,6 +30,15 @@ public class CardDataSource extends DataSource {
 		return fetchCard(whereClause);
 	}
 	
+	public boolean updateCard(long id, String term, String definition) {
+		ContentValues values = new ContentValues();
+		String whereClause = DatabaseHelper.CARD_ID_COLUMN + "=" + id;
+		values.put(DatabaseHelper.CARD_TERM_COLUMN, term);
+		values.put(DatabaseHelper.CARD_DEFINITION_COLUMN, definition);
+		
+		return db.update(DatabaseHelper.CARD_TABLE_NAME, values, whereClause, null) > 0;
+	}
+	
 	public Card getCardById(long id) {
 		String whereClause = DatabaseHelper.CARD_ID_COLUMN + "=" + id;
 		return fetchCard(whereClause);
