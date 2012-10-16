@@ -36,5 +36,7 @@
     <string name="next">Next</string>
     <string name="flip">Flip</string>
     <string name="statHeader">Statistics By Date</string>
+    <string name="title_activity_edit_card">EditCardActivity</string>
+    <string name="add_card">Add A Card</string>
 
 </resources>

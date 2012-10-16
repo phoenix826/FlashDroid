@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/cardEditTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/term"
+        android:background="@drawable/edit_text_border" />
+
+        <requestFocus />
+
+    <EditText
+        android:id="@+id/cardEditDefinition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardEditTerm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="@string/definition"
+        android:background="@drawable/edit_text_border"
+        android:singleLine="false" />
+    
+    <Button
+        android:id="@+id/saveCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save_deck"
+        android:onClick="saveCard" />
+
+</RelativeLayout>
