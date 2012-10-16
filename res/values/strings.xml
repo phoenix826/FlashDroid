@@ -35,5 +35,6 @@
     <string name="edit_deck">Edit Deck</string>
     <string name="next">Next</string>
     <string name="flip">Flip</string>
+    <string name="statHeader">Statistics By Date</string>
 
 </resources>
