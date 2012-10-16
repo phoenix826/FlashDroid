@@ -36,4 +36,26 @@
         android:src="@android:drawable/ic_menu_rotate"
         android:contentDescription="@string/flip" />
 
+    <TextView
+        android:id="@+id/flipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/flipButton"
+        android:layout_below="@+id/flipButton"
+        android:layout_marginLeft="12dp"
+        android:text="@string/flip"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/nextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nextButton"
+        android:layout_below="@+id/flipButton"
+        android:layout_marginLeft="9dp"
+        android:text="@string/next"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
 </RelativeLayout>
