@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
     }
     
     public void startStudy(View view) {
-    	Intent intent = new Intent(this, StudyActivity.class);
+    	Intent intent = new Intent(this, SelectDeckToStudyActivity.class);
     	startActivity(intent);
     }
     
