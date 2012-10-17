@@ -55,5 +55,10 @@ public class Stat
 	{
 		return numReFlips;
 	}
+	
+	public String toString()
+	{
+		return deckName;
+	}
 
 }
