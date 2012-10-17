@@ -47,5 +47,10 @@ public class Log
 		}
 		return null;
 	}
+	
+	public ArrayList<Stat> getAllStats()
+	{
+		return this.stats;
+	}
 
 }
