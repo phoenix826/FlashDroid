@@ -195,7 +195,7 @@ public class StudyActivity extends Activity {
 			// TODO: Show the stats screen and create the stats object
     		final int statId = Log.getAllStats().size();
     		final String deckName = currentDeck.getName();
-    		final long timeTaken = Settings.getStudySessionDuration() - timeRemaining;
+    		final long timeTaken = Settings.getStudySessionDuration() - timeRemaining + 2000;
     		
     		final Stat s = new Stat(statId, deckName, timeTaken, currentCardIndex, numReFlips, startMoment);
     		Log.getinstance().addStat(s);
