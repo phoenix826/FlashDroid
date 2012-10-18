@@ -206,6 +206,7 @@ public class StudyActivity extends Activity {
     		
     		Intent intent = new Intent(StudyActivity.this, StatisticsBreakdownActivity.class);
 			intent.putExtra("statId", statId);
+			intent.putExtra("studySession", true);
 			startActivity(intent);
     	}
     }
