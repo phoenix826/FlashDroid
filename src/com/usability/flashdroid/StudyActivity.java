@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -12,6 +13,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,6 +27,7 @@ import com.usability.flashdroid.data_source.DeckDataSource;
 import com.usability.flashdroid.model.Card;
 import com.usability.flashdroid.model.Deck;
 import com.usability.flashdroid.model.Log;
+import com.usability.flashdroid.model.Settings;
 import com.usability.flashdroid.model.Stat;
 
 public class StudyActivity extends Activity {
@@ -40,7 +44,7 @@ public class StudyActivity extends Activity {
 	private Date startMoment;
 	private int numReFlips = 0;
 	
-	private Timer clock = new Timer();
+	private long timeRemaining = 0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,25 +53,23 @@ public class StudyActivity extends Activity {
         
         startMoment = new Date();
         
-        // TODO: Make it so this is pulled from the settings
-        final Date endTime = new Date();
-        final long tenMinutesFromStart = endTime.getTime() + 600000;
-        clock.schedule(new TimerTask() {
+        Settings.getInstance();
+		new CountDownTimer(Settings.getStudySessionDuration(), 1000) {
 			
 			@Override
-			public void run() {
+			public void onTick(long millisUntilFinished) {
+				final TextView countdown = (TextView) findViewById(R.id.countdown);
+				countdown.setText(Util.convertMillisecondsToTimeString(millisUntilFinished));
+				
+				timeRemaining = millisUntilFinished;
+			}
+			
+			@Override
+			public void onFinish() {
 				endSession(false);
+				
 			}
-		}, tenMinutesFromStart);
-        
-        /*new Thread(new Runnable() {
-			public void run() {
-				while (true) {
-					final TextView timer = (TextView) findViewById(R.id.countdown);
-					timer.setText("" + System.currentTimeMillis());
-				}
-			}
-		}).start();*/
+		}.start();
         
         this.deckSource = new DeckDataSource(this);
         this.cardSource = new CardDataSource(this);
@@ -193,7 +195,11 @@ public class StudyActivity extends Activity {
     		Log.getinstance();
     		
 			// TODO: Show the stats screen and create the stats object
-    		final Stat s = new Stat(Log.getAllStats().size(), currentDeck.getName(), 0, currentCardIndex, numReFlips);
+    		final int statId = Log.getAllStats().size();
+    		final String deckName = currentDeck.getName();
+    		final long timeTaken = Settings.getStudySessionDuration() - timeRemaining;
+    		
+    		final Stat s = new Stat(statId, deckName, timeTaken, currentCardIndex, numReFlips);
     		Log.getinstance().addStat(s);
     	}
     }
