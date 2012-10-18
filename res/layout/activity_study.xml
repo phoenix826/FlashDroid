@@ -2,59 +2,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
+
     <ImageButton
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="77dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:contentDescription="@string/next"
-        android:width="36px"
-        android:height="36px"
+        android:layout_toRightOf="@+id/termText"
         android:background="#00000000"
-        android:src="@drawable/ic_next_card" />
+        android:contentDescription="@string/next"
+        android:height="36px"
+        android:src="@drawable/ic_next_card"
+        android:width="36px" />
 
     <ImageButton
         android:id="@+id/flipButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/nextButton"
-        android:layout_toLeftOf="@+id/textView1"
-        android:contentDescription="@string/flip"
-        android:width="36px"
-        android:height="36px"
+        android:layout_toLeftOf="@+id/termText"
         android:background="#00000000"
-        android:src="@drawable/ic_flip"/>
+        android:contentDescription="@string/flip"
+        android:height="36px"
+        android:src="@drawable/ic_flip"
+        android:width="36px" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/termText"
         android:layout_alignParentTop="true"
         android:layout_marginTop="46dp"
         android:src="@drawable/ic_clock" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignRight="@+id/termText"
         android:text="@string/defaultTime"
-        android:textColor="#333"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/TextView01"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
-        android:text="@string/timeRemaining"
         android:textColor="#333"
         android:textSize="20dp" />
 
@@ -65,9 +54,9 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:src="@drawable/index_card_front" />
-    
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/termText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -77,11 +66,22 @@
         tools:context=".StudyActivity" />
 
     <TextView
+        android:id="@+id/timeRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/nextButton"
+        android:layout_marginTop="14dp"
+        android:text="@string/timeRemaining"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
+    <TextView
         android:id="@+id/nextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/TextView02"
         android:layout_below="@+id/flipButton"
+        android:layout_toRightOf="@+id/termText"
         android:text="@string/next"
         android:textColor="#333"
         android:textSize="20dp" />
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/nextText"
         android:layout_alignBottom="@+id/nextText"
-        android:layout_toLeftOf="@+id/textView1"
+        android:layout_toLeftOf="@+id/termText"
         android:text="@string/flip"
         android:textColor="#333"
         android:textSize="20dp" />
