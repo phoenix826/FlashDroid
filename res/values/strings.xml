@@ -38,7 +38,7 @@
     <string name="statHeader">Statistics By Date</string>
     <string name="title_activity_edit_card">EditCardActivity</string>
     <string name="add_card">Add A Card</string>
-    <string name="title_activity_select_deck_to_study">SelectDeckToStudyActivity</string>
+    <string name="title_activity_select_deck_to_study">Study</string>
     <string name="select_a_deck">Select a Deck</string>
 
 </resources>
