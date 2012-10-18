@@ -3,57 +3,102 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <ImageView
+        android:id="@+id/indexCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:height="166px"
+        android:src="@drawable/index_card_front"
+        android:width="319px" />
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/timeRemaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/timeRemaining"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timeRemaining"
+        android:layout_below="@+id/timeRemaining"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_clock" />
+
+    <TextView
+        android:id="@+id/countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="@string/defaultTime"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/termText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/term"
+        android:text=""
         android:textSize="35dp"
         tools:context=".StudyActivity" />
-
-    <ImageButton
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="77dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:width="80dp"
-        android:height="80dp"
-        android:src="@drawable/ic_arrow_right"
-        android:contentDescription="@string/next" />
-
-    <ImageButton
-        android:id="@+id/flipButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/nextButton"
-        android:layout_toLeftOf="@+id/textView1"
-        android:width="80dp"
-        android:height="80dp"
-        android:src="@android:drawable/ic_menu_rotate"
-        android:contentDescription="@string/flip" />
 
     <TextView
         android:id="@+id/flipText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/flipButton"
-        android:layout_below="@+id/flipButton"
-        android:layout_marginLeft="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_toLeftOf="@+id/imageView1"
         android:text="@string/flip"
         android:textColor="#333"
         android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/flipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/flipText"
+        android:layout_alignLeft="@+id/flipText"
+        android:layout_marginBottom="14dp"
+        android:background="#00000000"
+        android:contentDescription="@string/flip"
+        android:height="36px"
+        android:src="@drawable/ic_flip"
+        android:width="36px" />
+
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/flipButton"
+        android:layout_toRightOf="@+id/timeRemaining"
+        android:background="#00000000"
+        android:contentDescription="@string/next"
+        android:height="36px"
+        android:src="@drawable/ic_next_card"
+        android:width="36px" />
 
     <TextView
         android:id="@+id/nextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/flipText"
+        android:layout_alignBottom="@+id/flipText"
         android:layout_alignLeft="@+id/nextButton"
-        android:layout_below="@+id/flipButton"
-        android:layout_marginLeft="9dp"
         android:text="@string/next"
         android:textColor="#333"
         android:textSize="20dp" />

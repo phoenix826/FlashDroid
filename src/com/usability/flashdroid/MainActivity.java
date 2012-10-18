@@ -15,6 +15,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        final TextView studyLabel = (TextView) findViewById(R.id.studyText);
+        studyLabel.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				startStudy(v);
+				
+			}
+		});
+        
         final View.OnClickListener manageButtonListener = new View.OnClickListener() {
 			public void onClick(View v) {
 				Intent newIntent = new Intent(MainActivity.this, ManagerActivity.class);
@@ -27,6 +36,24 @@ public class MainActivity extends Activity {
         
         manageButton.setOnClickListener(manageButtonListener);
         manageLabel.setOnClickListener(manageButtonListener);
+        
+        final TextView statisticsLabel = (TextView) findViewById(R.id.statisticsText);
+        statisticsLabel.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				startStats(v);
+				
+			}
+		});
+        
+        final TextView settingsLabel = (TextView) findViewById(R.id.settingsText);
+        settingsLabel.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				startSettings(v);
+				
+			}
+		});
     }
 
     @Override
@@ -36,7 +63,7 @@ public class MainActivity extends Activity {
     }
     
     public void startStudy(View view) {
-    	Intent intent = new Intent(this, StudyActivity.class);
+    	Intent intent = new Intent(this, SelectDeckToStudyActivity.class);
     	startActivity(intent);
     }
     

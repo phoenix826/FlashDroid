@@ -1,6 +1,7 @@
 package com.usability.flashdroid;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -45,9 +46,9 @@ public class StatsActivity extends Activity {
         
         //For testing purposes, lets populate the array of Statistics
         //id, deckname, time taken, number cards completed, number of reflips
-        stats.add(new Stat(1,"Dinki Deck", 1, 2, 3));
-        stats.add(new Stat(1,"Devos Deck", 10, 20, 30));
-        stats.add(new Stat(1,"Lame DECK deck kced Deck", 11, 22, 33));
+        stats.add(new Stat(1,"Dinki Deck", 1, 2, 3, new Date()));
+        stats.add(new Stat(1,"Devos Deck", 10, 20, 30,  new Date()));
+        stats.add(new Stat(1,"Lame DECK deck kced Deck", 11, 22, 33,  new Date()));
         
         this.adapter = new ArrayAdapter<Stat>(StatsActivity.this, android.R.layout.simple_list_item_1, stats);
         

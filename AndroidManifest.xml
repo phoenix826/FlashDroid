@@ -4,8 +4,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -67,6 +67,24 @@
         <activity
             android:name=".EditCardActivity"
             android:label="@string/title_activity_edit_card" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SelectDeckToStudyActivity"
+            android:label="@string/title_activity_select_deck_to_study" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".StatisticsBreakdownActivity"
+            android:label="@string/title_activity_statistics_breakdown" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
