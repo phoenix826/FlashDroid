@@ -15,14 +15,14 @@ public class Stat
 	
 	int id;
 	String deckName = "";
-	int timeTaken;
+	long timeTaken;
 	int numCardsCompleted;
 	int numReFlips;
 
 	/**
 	 * 
 	 */
-	public Stat(int id, String deckName, int tT, int numCC, int numRF)
+	public Stat(int id, String deckName, long tT, int numCC, int numRF)
 	{
 		this.id = id;
 		this.deckName = deckName;
@@ -41,7 +41,7 @@ public class Stat
 		return deckName;
 	}
 	
-	public int getTimeTaken()
+	public long getTimeTaken()
 	{
 		return timeTaken;
 	}
