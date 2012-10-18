@@ -13,7 +13,7 @@ public class Log
 {
 	private static Log log;
 	
-	ArrayList<Stat> stats;
+	static ArrayList<Stat> stats;
 
 	/**
 	 * 
@@ -48,9 +48,9 @@ public class Log
 		return null;
 	}
 	
-	public ArrayList<Stat> getAllStats()
+	public static ArrayList<Stat> getAllStats()
 	{
-		return this.stats;
+		return stats;
 	}
 
 }
