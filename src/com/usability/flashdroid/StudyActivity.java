@@ -151,7 +151,7 @@ public class StudyActivity extends Activity {
 	private void flip() {
     	setTermView(!termSideUp);
     	final TextView termView = (TextView) findViewById(R.id.termText);
-    	
+     	
     	if (termSideUp) {
     		termView.setText(cards.get(currentCardIndex).getTerm());
     	}

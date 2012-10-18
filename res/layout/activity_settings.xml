@@ -3,42 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:shadowColor="#000000"
-        android:shadowDx="-12"
-        android:shadowDy="-12"
-        android:shadowRadius="5" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
-        android:text="@string/random_background_color"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:context=".SettingsActivity" />
-
-    <TimePicker
-        android:id="@+id/timePicker1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_marginBottom="14dp" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/timePicker1"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="14dp"
+        android:layout_marginTop="18dp"
         android:text="@string/flip_timeout"
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:context=".SettingsActivity" />
@@ -47,17 +18,111 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/checkBox1"
+        android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="104dp"
         android:text="@string/timer_length"
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:context=".SettingsActivity" />
 
-    <TimePicker
-        android:id="@+id/TimePicker01"
+    <TextView
+        android:id="@+id/countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="@string/defaultTime"
+        android:textColor="#333"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="111dp"
+        android:text="@string/random_background_color"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:context=".SettingsActivity" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/countdown"
+        android:layout_centerVertical="true"
+        android:text="@string/defaultTime"
+        android:textColor="#333"
+        android:textSize="30dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:minHeight="25dip"
+        android:minWidth="25dip"
+        android:shadowColor="#000000"
+        android:shadowDx="-12"
+        android:shadowDy="-12"
+        android:shadowRadius="5" />
+
+    <ImageButton
+        android:id="@+id/upButton01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:minHeight="20dip"
+        android:minWidth="20dip"
+        android:contentDescription=""
+        android:src="@drawable/ic_up_arrow" />
+
+    <ImageButton
+        android:id="@+id/downButton01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/upButton01"
+        android:layout_marginLeft="15dp"
+        android:background="#ffffff"
+        android:minHeight="20dip"
+        android:minWidth="20dip"
+        android:contentDescription=""
+        android:src="@drawable/ic_down_arrow" />
+
+    <ImageButton
+        android:id="@+id/upButton02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="15dp"
+        android:background="#ffffff"
+        android:minHeight="20dip"
+        android:minWidth="20dip"
+        android:contentDescription=""
+        android:src="@drawable/ic_up_arrow" />
+
+    <ImageButton
+        android:id="@+id/downButton02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/upButton02"
+        android:layout_marginLeft="15dp"
+        android:background="#ffffff"
+        android:minHeight="20dip"
+        android:minWidth="20dip"
+        android:contentDescription=""
+        android:src="@drawable/ic_down_arrow" />
 
 </RelativeLayout>
