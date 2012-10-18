@@ -93,12 +93,14 @@ public class StudyActivity extends Activity {
     		Context context = getApplicationContext();
     		CharSequence text = "Please select a deck with at least 1 card.";
     		int duration = Toast.LENGTH_LONG;
-
-    		Intent newIntent = new Intent(StudyActivity.this, SelectDeckToStudyActivity.class);
-    		StudyActivity.this.startActivity(newIntent);
     		
     		Toast toast = Toast.makeText(context, text, duration);
     		toast.show();
+    		
+    		Intent newIntent = new Intent(StudyActivity.this, SelectDeckToStudyActivity.class);
+    		StudyActivity.this.startActivity(newIntent);
+    		
+    		return;
     	}
     	
     	final TextView termView = (TextView) findViewById(R.id.termText);
@@ -201,6 +203,10 @@ public class StudyActivity extends Activity {
     		
     		final Stat s = new Stat(statId, deckName, timeTaken, currentCardIndex, numReFlips);
     		Log.getinstance().addStat(s);
+    		
+    		Intent intent = new Intent(StudyActivity.this, StatisticsBreakdownActivity.class);
+			intent.putExtra("statId", statId);
+			startActivity(intent);
     	}
     }
     
