@@ -2,7 +2,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+    
+    <ImageButton
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="77dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:contentDescription="@string/next"
+        android:width="36px"
+        android:height="36px"
+        android:background="#00000000"
+        android:src="@drawable/ic_next_card" />
 
+    <ImageButton
+        android:id="@+id/flipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/nextButton"
+        android:layout_toLeftOf="@+id/textView1"
+        android:contentDescription="@string/flip"
+        android:width="36px"
+        android:height="36px"
+        android:background="#00000000"
+        android:src="@drawable/ic_flip"/>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:src="@drawable/ic_clock" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignRight="@+id/textView1"
+        android:text="@string/defaultTime"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView01"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="@string/timeRemaining"
+        android:textColor="#333"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/index_card_front" />
+    
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -13,48 +76,24 @@
         android:textSize="35dp"
         tools:context=".StudyActivity" />
 
-    <ImageButton
-        android:id="@+id/nextButton"
+    <TextView
+        android:id="@+id/nextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="77dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:width="80dp"
-        android:height="80dp"
-        android:src="@drawable/ic_arrow_right"
-        android:contentDescription="@string/next" />
-
-    <ImageButton
-        android:id="@+id/flipButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/nextButton"
-        android:layout_toLeftOf="@+id/textView1"
-        android:width="80dp"
-        android:height="80dp"
-        android:src="@android:drawable/ic_menu_rotate"
-        android:contentDescription="@string/flip" />
+        android:layout_alignRight="@+id/TextView02"
+        android:layout_below="@+id/flipButton"
+        android:text="@string/next"
+        android:textColor="#333"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/flipText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/flipButton"
-        android:layout_below="@+id/flipButton"
-        android:layout_marginLeft="12dp"
+        android:layout_alignBaseline="@+id/nextText"
+        android:layout_alignBottom="@+id/nextText"
+        android:layout_toLeftOf="@+id/textView1"
         android:text="@string/flip"
-        android:textColor="#333"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/nextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/nextButton"
-        android:layout_below="@+id/flipButton"
-        android:layout_marginLeft="9dp"
-        android:text="@string/next"
         android:textColor="#333"
         android:textSize="20dp" />
 
