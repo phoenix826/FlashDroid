@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="18dp"
         android:text="@string/timeRemaining"
         android:textColor="#333"
         android:textSize="20dp" />
@@ -31,15 +31,16 @@
         android:layout_alignLeft="@+id/timeRemaining"
         android:layout_below="@+id/timeRemaining"
         android:layout_marginLeft="37dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/ic_clock" />
 
     <TextView
         android:id="@+id/countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_marginLeft="15dp"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/imageView1"
         android:text="@string/defaultTime"
         android:textColor="#333"
