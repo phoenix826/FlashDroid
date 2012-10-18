@@ -62,7 +62,8 @@ public class Stat
 	
 	public String toString()
 	{
-		return deckName;
+		String[] result = startDate.toString().split(" ");
+		return deckName + " - " + result[0] + " " + result[1] + " " + result[2] + " " + result[3];
 	}
 
 }
