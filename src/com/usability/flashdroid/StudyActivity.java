@@ -201,7 +201,7 @@ public class StudyActivity extends Activity {
     		final String deckName = currentDeck.getName();
     		final long timeTaken = Settings.getStudySessionDuration() - timeRemaining;
     		
-    		final Stat s = new Stat(statId, deckName, timeTaken, currentCardIndex, numReFlips);
+    		final Stat s = new Stat(statId, deckName, timeTaken, currentCardIndex, numReFlips, startMoment);
     		Log.getinstance().addStat(s);
     		
     		Intent intent = new Intent(StudyActivity.this, StatisticsBreakdownActivity.class);

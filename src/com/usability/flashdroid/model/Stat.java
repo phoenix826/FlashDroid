@@ -3,6 +3,8 @@
  */
 package com.usability.flashdroid.model;
 
+import java.util.Date;
+
 /**
  * @author Edward Dinki
  *
@@ -18,17 +20,19 @@ public class Stat
 	long timeTaken;
 	int numCardsCompleted;
 	int numReFlips;
+	Date startDate;
 
 	/**
 	 * 
 	 */
-	public Stat(int id, String deckName, long tT, int numCC, int numRF)
+	public Stat(int id, String deckName, long tT, int numCC, int numRF, Date start)
 	{
 		this.id = id;
 		this.deckName = deckName;
 		this.timeTaken = tT;
 		this.numCardsCompleted = numCC;
 		this.numReFlips = numRF;
+		this.startDate = start;
 	}
 	
 	public int getID()
