@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.usability.flashdroid.model.Log;
 import com.usability.flashdroid.model.Stat;
@@ -23,11 +24,6 @@ public class StatsActivity extends Activity {
 	 * The ListView that the stats will reside in.
 	 */
 	private ListView statsList;
-	
-	/**
-	 * The instance of the Log so we can retreive the list of stats
-	 */
-	private Log log;
 	
 	/**
 	 * Array of Stats
@@ -45,9 +41,9 @@ public class StatsActivity extends Activity {
         setContentView(R.layout.activity_stats);
         
         this.statsList = (ListView) findViewById(R.id.statsList);
-        this.log = Log.getinstance();
         
-        stats = log.getAllStats();
+        Log.getinstance();
+        stats = Log.getAllStats();
         
         //For testing purposes, lets populate the array of Statistics
         //id, deckname, time taken, number cards completed, number of reflips
@@ -62,7 +58,7 @@ public class StatsActivity extends Activity {
         statsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(StatsActivity.this, StatisticsBreakdownActivity.class);
-				intent.putExtra("statID", id);
+				intent.putExtra("statId", position);
 				StatsActivity.this.startActivity(intent);
 			}
 		});
