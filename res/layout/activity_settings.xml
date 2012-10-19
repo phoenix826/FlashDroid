@@ -32,7 +32,7 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:text="@string/defaultTime"
+        android:text="0"
         android:textColor="#333"
         android:textSize="30dp" />
 
@@ -48,12 +48,12 @@
         tools:context=".SettingsActivity" />
 
     <TextView
-        android:id="@+id/TextView01"
+        android:id="@+id/countdown2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/countdown"
         android:layout_centerVertical="true"
-        android:text="@string/defaultTime"
+        android:text="0"
         android:textColor="#333"
         android:textSize="30dp" />
 

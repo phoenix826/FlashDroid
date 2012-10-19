@@ -19,7 +19,7 @@ public class Settings {
 		
 		return instance;
 	}
-	
+
 	public static long getStudySessionDuration() {
 		return studySessionDuration;
 	}
