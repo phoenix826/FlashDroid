@@ -5,7 +5,7 @@ public class Settings {
 	
 	// TODO: For Shaun, make this a drop down list or however you want to do it
 	private static long studySessionDuration = 600000;
-	private static long flipCardDuration = 9000;
+	private static long flipCardDuration = 0;
 	private static boolean alternateCardColors = false;
 	
 	private Settings() {
@@ -28,7 +28,7 @@ public class Settings {
 		studySessionDuration = dur;
 	}
 	
-	public static long getflipCardDuration() {
+	public static long getFlipCardDuration() {
 		return flipCardDuration;
 	}
 	

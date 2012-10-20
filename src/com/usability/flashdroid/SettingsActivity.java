@@ -26,11 +26,17 @@ public class SettingsActivity extends Activity {
 				arrowAction(v.getId());
 			}
 		};
-				
+		
+		final TextView countdown = (TextView) findViewById(R.id.countdown);
+		countdown.setText(Util.convertMillisecondsToTimeString(Settings.getFlipCardDuration()));
+		
+		final TextView countdown2 = (TextView) findViewById(R.id.countdown2);
+		countdown2.setText(Util.convertMillisecondsToTimeString(Settings.getStudySessionDuration()));
+		
 		final ImageButton upArrow01 = (ImageButton) findViewById(R.id.upButton01);
     	final ImageButton upArrow02 = (ImageButton) findViewById(R.id.upButton02);
-		final ImageButton downArrow01 = (ImageButton) findViewById(R.id.upButton01);
-    	final ImageButton downArrow02 = (ImageButton) findViewById(R.id.upButton02);
+		final ImageButton downArrow01 = (ImageButton) findViewById(R.id.downButton01);
+    	final ImageButton downArrow02 = (ImageButton) findViewById(R.id.downButton02);
     	
     	upArrow01.setOnClickListener(arrowHandler);
     	downArrow01.setOnClickListener(arrowHandler);
@@ -50,30 +56,30 @@ public class SettingsActivity extends Activity {
     	switch(id) {
     	
 	    	case R.id.upButton01: {
-	    		TextView countdown = (TextView) findViewById(R.id.countdown);
-	    		int newVal = (Integer.parseInt((String) countdown.getText()) + 5) % 60;
+	    		int newVal = (int) (((Settings.getFlipCardDuration() / 1000) + 5) % 60);
 	    		setTimerValueByID(R.id.countdown, newVal);
 	    		break;
 	    	}
 	    	
 	    	case R.id.upButton02: {
-	    		TextView countdown = (TextView) findViewById(R.id.countdown2);
-	    		int newVal = (Integer.parseInt((String) countdown.getText()) + 5) % 1000;
+	    		int newVal = (int) (((Settings.getStudySessionDuration() / 1000) + 5) % 1000);
 	    		setTimerValueByID(R.id.countdown2, newVal);
 	    		break;
 	    	}
 	    	
 	    	case R.id.downButton01: {
-	    		TextView countdown = (TextView) findViewById(R.id.countdown);
-	    		int newVal = (Integer.parseInt((String) countdown.getText()) - 5) % 60;
-	    		setTimerValueByID(R.id.countdown, newVal);
+	    		if ((Settings.getFlipCardDuration() / 1000) - 5 >= 0) {
+	    			int newVal = (int) (((Settings.getFlipCardDuration() / 1000) - 5) % 60);
+	    			setTimerValueByID(R.id.countdown, newVal);
+	    		}
 	    		break;
 	    	}
 	    	
 	    	case R.id.downButton02: {
-	    		TextView countdown = (TextView) findViewById(R.id.countdown2);
-	    		int newVal = (Integer.parseInt((String) countdown.getText()) - 5) % 1000;
-	    		setTimerValueByID(R.id.countdown2, newVal);
+	    		if ((Settings.getStudySessionDuration() / 1000) - 5 >= 0) {
+	    			int newVal = (int) (((Settings.getStudySessionDuration() / 1000) - 5) % 1000);
+	    			setTimerValueByID(R.id.countdown2, newVal);
+	    		}
 	    		break;
 	    	}
     	}
@@ -81,7 +87,7 @@ public class SettingsActivity extends Activity {
     
     private void setTimerValueByID(int id, int val) {
     	final TextView countdown = (TextView) findViewById(id);
-		countdown.setText((new Integer(val)).toString());
+		countdown.setText(Util.convertMillisecondsToTimeString((long)(val * 1000)));
 		if(id == R.id.countdown) {
 			Settings.setflipCardDuration(val * 1000);
 		} else if (id == R.id.countdown2) {
