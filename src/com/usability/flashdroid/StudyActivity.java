@@ -41,6 +41,7 @@ public class StudyActivity extends Activity {
 	private int numReFlips = 0;
 	
 	private long timeRemaining = 0;
+	private CountDownTimer timer;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class StudyActivity extends Activity {
         startMoment = new Date();
         
         Settings.getInstance();
-		new CountDownTimer(Settings.getStudySessionDuration(), 1000) {
+		timer = new CountDownTimer(Settings.getStudySessionDuration(), 1000) {
 			
 			@Override
 			public void onTick(long millisUntilFinished) {
@@ -188,6 +189,7 @@ public class StudyActivity extends Activity {
     	if (early) {
     		Intent newIntent = new Intent(this, MainActivity.class);
         	startActivity(newIntent);
+        	timer.cancel();
     	}
     	else {
     		Log.getinstance();
