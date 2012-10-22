@@ -4,14 +4,17 @@
 
 package com.usability.flashdroid;
 
-import com.usability.flashdroid.model.Settings;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.usability.flashdroid.model.Settings;
 
 public class SettingsActivity extends Activity {
 	
@@ -37,6 +40,15 @@ public class SettingsActivity extends Activity {
     	final ImageButton upArrow02 = (ImageButton) findViewById(R.id.upButton02);
 		final ImageButton downArrow01 = (ImageButton) findViewById(R.id.downButton01);
     	final ImageButton downArrow02 = (ImageButton) findViewById(R.id.downButton02);
+    	
+    	final CheckBox colorCheckbox = (CheckBox) findViewById(R.id.checkBox1);
+    	colorCheckbox.setChecked(Settings.isAlternatingCardColors());
+    	colorCheckbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				Settings.setAlternatingCardColors(isChecked);
+			}
+		});
     	
     	upArrow01.setOnClickListener(arrowHandler);
     	downArrow01.setOnClickListener(arrowHandler);

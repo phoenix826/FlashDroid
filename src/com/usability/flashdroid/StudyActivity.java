@@ -2,6 +2,7 @@ package com.usability.flashdroid;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -42,6 +43,19 @@ public class StudyActivity extends Activity {
 	
 	private long timeRemaining = 0;
 	private CountDownTimer timer;
+	private final Random randomColor = new Random();
+	private int currentColor = -1;
+	private final int[] cardColorFront = new int[] {
+			R.drawable.index_card_front_red, 
+			R.drawable.index_card_front_green,
+			R.drawable.index_card_front_blue
+	};
+	
+	private final int[] cardColorBack = new int[] {
+			R.drawable.index_card_back_red, 
+			R.drawable.index_card_back_green,
+			R.drawable.index_card_back_blue
+	};
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,6 +87,9 @@ public class StudyActivity extends Activity {
                 
         Bundle extras = getIntent().getExtras();
         long id = extras.getLong("deckId");
+        
+        updateCardColor();
+        setTermView(true);
         
         deckSource.open();
         this.currentDeck = deckSource.getDeckById(id);
@@ -138,6 +155,7 @@ public class StudyActivity extends Activity {
     
     private void nextCard() {
     	currentCardIndex++;
+    	updateCardColor();
     	if (currentCardIndex >= cards.size()) {
     		endSession(false);
     	}
@@ -176,11 +194,22 @@ public class StudyActivity extends Activity {
     	
     	if (this.termSideUp) {
     		termView.setTextSize(35);
-    		indexCard.setImageResource(R.drawable.index_card_front);
+    		System.out.println(currentColor);
+    		if (currentColor == -1 || !Settings.isAlternatingCardColors()) {
+    			indexCard.setImageResource(R.drawable.index_card_front);
+    		}
+    		else {
+    			indexCard.setImageResource(cardColorFront[currentColor]);
+    		}
     	}
     	else {
     		termView.setTextSize(16);
-    		indexCard.setImageResource(R.drawable.index_card_back);
+    		if (currentColor == -1 || !Settings.isAlternatingCardColors()) {
+    			indexCard.setImageResource(R.drawable.index_card_back);
+    		}
+    		else {
+    			indexCard.setImageResource(cardColorBack[currentColor]);
+    		}
     	}
     	
     }
@@ -207,6 +236,12 @@ public class StudyActivity extends Activity {
 			intent.putExtra("studySession", true);
 			startActivity(intent);
     	}
+    }
+    
+    private void updateCardColor() {
+    	if (Settings.isAlternatingCardColors()) {
+        	currentColor = randomColor.nextInt(cardColorFront.length);
+        }
     }
     
     @Override
