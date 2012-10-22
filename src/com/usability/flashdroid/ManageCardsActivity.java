@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,6 +42,16 @@ public class ManageCardsActivity extends Activity {
         this.cardSource = new CardDataSource(this);
         
         this.cardList = (ListView) findViewById(R.id.cardList);
+        cardList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent intent = new Intent(ManageCardsActivity.this, EditCardActivity.class);
+				
+				
+				intent.putExtra("deckId", currentDeck.getId());
+				intent.putExtra("cardId", id);
+				ManageCardsActivity.this.startActivity(intent);
+			}
+		});
         
         Bundle extras = getIntent().getExtras();
         long id = extras.getLong("deckId");
