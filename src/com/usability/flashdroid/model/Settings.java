@@ -3,9 +3,7 @@ package com.usability.flashdroid.model;
 public class Settings {
 	private static Settings instance;
 	
-	// TODO: For Shaun, make this a drop down list or however you want to do it
 	private static long studySessionDuration = 600000;
-	private static long flipCardDuration = 0;
 	private static boolean alternateCardColors = false;
 	
 	private Settings() {
@@ -26,14 +24,6 @@ public class Settings {
 	
 	public static void setStudySessionDuration(long dur) {
 		studySessionDuration = dur;
-	}
-	
-	public static long getFlipCardDuration() {
-		return flipCardDuration;
-	}
-	
-	public static void setflipCardDuration(long dur) {
-		flipCardDuration = dur;
 	}
 	
 	public static boolean isAlternatingCardColors() {
