@@ -194,7 +194,6 @@ public class StudyActivity extends Activity {
     	
     	if (this.termSideUp) {
     		termView.setTextSize(35);
-    		System.out.println(currentColor);
     		if (currentColor == -1 || !Settings.isAlternatingCardColors()) {
     			indexCard.setImageResource(R.drawable.index_card_front);
     		}
