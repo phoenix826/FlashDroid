@@ -31,7 +31,7 @@
     <string name="manageLabel">Manage</string>
     <string name="statisticsLabel">Statistics</string>
     <string name="settingsLabel">Settings</string>
-    <string name="title_activity_edit_deck">EditDeckActivity</string>
+    <string name="title_activity_edit_deck">Edit A Deck</string>
     <string name="edit_deck">Edit Deck</string>
     <string name="next">Next</string>
     <string name="flip">Flip</string>
@@ -39,17 +39,17 @@
     <string name="random_background_color">Random Color Scheme:</string>
     <string name="flip_timeout">Time Until Auto-Flip:</string>
     <string name="statHeader">Statistics By Date</string>
-    <string name="title_activity_edit_card">EditCardActivity</string>
+    <string name="title_activity_edit_card">Edit A Card</string>
     <string name="add_card">Add A Card</string>
     <string name="title_activity_select_deck_to_study">Study</string>
-    <string name="select_a_deck">Select a Deck</string>
+    <string name="select_a_deck">Select A Deck</string>
     <string name="defaultTime">0:00</string>
     <string name="timeRemaining">Time Remaining:</string>
     <string name="statisticsDeckName">Deck Name:</string>
     <string name="totalTime">Total Time Taken:</string>
     <string name="numReflips">Number of Reflips:</string>
     <string name="numCards">Number of Cards Used:</string>
-    <string name="title_activity_statistics_breakdown">StatisticsBreakdown</string>
+    <string name="title_activity_statistics_breakdown">Statistics Breakdown</string>
     <string name="done">Done</string>
 
 </resources>
