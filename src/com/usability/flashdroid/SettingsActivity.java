@@ -56,6 +56,16 @@ public class SettingsActivity extends Activity {
 			}
 		});
     	
+    	final TextView randomColorLabel = (TextView) findViewById(R.id.randomColorLabel);
+    	randomColorLabel.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				boolean checkedCurrently = colorCheckbox.isChecked();
+				colorCheckbox.setChecked(!checkedCurrently);
+				Settings.setAlternatingCardColors(!checkedCurrently);
+			}
+		});
+    	
     	upArrow02.setOnClickListener(arrowHandler);
     	downArrow02.setOnClickListener(arrowHandler);
     }
