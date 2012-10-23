@@ -78,7 +78,6 @@ public class StudyActivity extends Activity {
 			@Override
 			public void onFinish() {
 				endSession(false);
-				
 			}
 		}.start();
         
@@ -222,7 +221,6 @@ public class StudyActivity extends Activity {
     	else {
     		Log.getinstance();
     		
-			// TODO: Show the stats screen and create the stats object
     		final int statId = Log.getAllStats().size();
     		final String deckName = currentDeck.getName();
     		final long timeTaken = Settings.getStudySessionDuration() - timeRemaining + 2000;

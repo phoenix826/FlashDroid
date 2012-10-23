@@ -41,56 +41,25 @@
         </activity>
         <activity
             android:name=".ManageCardsActivity"
-            android:label="@string/title_activity_manage_cards" >
+            android:label="@string/title_activity_manage_cards" />
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.usability.flashdroid.ManagerActivity" />
-        </activity>
         <activity
             android:name=".AddCardActivity"
-            android:label="@string/title_activity_add_card" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_add_card" />
         <activity
             android:name=".EditDeckActivity"
-            android:label="@string/title_activity_edit_deck" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_edit_deck" />
         <activity
             android:name=".EditCardActivity"
-            android:label="@string/title_activity_edit_card" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_edit_card" />
         <activity
             android:name=".SelectDeckToStudyActivity"
-            android:label="@string/title_activity_select_deck_to_study" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_select_deck_to_study" />
         <activity
             android:name=".StatisticsBreakdownActivity"
-            android:label="@string/title_activity_statistics_breakdown" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_statistics_breakdown" />
     </application>
 
 </manifest>
