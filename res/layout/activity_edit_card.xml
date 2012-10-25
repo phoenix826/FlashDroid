@@ -7,11 +7,10 @@
         android:id="@+id/cardEditTerm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/saveCard"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="75dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/term"
         android:background="@drawable/edit_text_border" />
 
@@ -23,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/cardEditTerm"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="34dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:hint="@string/definition"
@@ -34,9 +33,20 @@
         android:id="@+id/saveCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:text="@string/save_deck"
         android:onClick="saveCard" />
+
+    <TextView
+        android:id="@+id/editCardHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/edit_card"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:context=".AddDeckActivity" />
 
 </RelativeLayout>

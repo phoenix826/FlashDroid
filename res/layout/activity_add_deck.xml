@@ -20,22 +20,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/addDeckHeader"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="94dp"
+        android:background="@drawable/edit_text_border"
         android:ems="10"
         android:hint="@string/deck_name"
-        android:background="@drawable/edit_text_border"
-        android:inputType="text" >
-
-        <requestFocus />
-    </EditText>
+        android:inputType="text" />
 
     <Button
         android:id="@+id/saveDeck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/save_deck"
-        android:onClick="saveDeck" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="saveDeck"
+        android:text="@string/save_deck" />
 
 </RelativeLayout>

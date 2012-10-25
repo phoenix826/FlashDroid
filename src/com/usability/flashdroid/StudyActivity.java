@@ -201,7 +201,7 @@ public class StudyActivity extends Activity {
     		}
     	}
     	else {
-    		termView.setTextSize(16);
+    		termView.setTextSize(25);
     		if (currentColor == -1 || !Settings.isAlternatingCardColors()) {
     			indexCard.setImageResource(R.drawable.index_card_back);
     		}

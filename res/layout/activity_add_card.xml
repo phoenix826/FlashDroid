@@ -3,40 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+        <requestFocus />
+
+    <Button
+        android:id="@+id/saveCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="saveCard"
+        android:text="@string/save_deck" />
+
     <EditText
         android:id="@+id/cardTerm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/saveCard"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/edit_text_border"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/term"
-        android:background="@drawable/edit_text_border" />
-
-        <requestFocus />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/cardDefinition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cardTerm"
         android:layout_below="@+id/cardTerm"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:hint="@string/definition"
+        android:layout_marginTop="34dp"
         android:background="@drawable/edit_text_border"
+        android:ems="10"
+        android:hint="@string/definition"
+        android:inputType="textMultiLine"
         android:singleLine="false" />
-    
-    <Button
-        android:id="@+id/saveCard"
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/addCardHeader"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/save_deck"
-        android:onClick="saveCard" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/new_card"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:context=".AddDeckActivity" />
 
 </RelativeLayout>

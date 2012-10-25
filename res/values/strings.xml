@@ -51,5 +51,7 @@
     <string name="numCards">Number of Cards Used:</string>
     <string name="title_activity_statistics_breakdown">Statistics Breakdown</string>
     <string name="done">Done</string>
+    <string name="new_card">New Card</string>
+    <string name="edit_card">Edit Card</string>
 
 </resources>
