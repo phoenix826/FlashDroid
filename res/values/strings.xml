@@ -10,7 +10,7 @@
     <string name="settings">Settings</string>
     <string name="title_activity_study">Study</string>
     <string name="title_activity_manager">Manager</string>
-    <string name="decks">Decks</string>
+    <string name="decks"><u>Decks</u></string>
     <string name="term">Term</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_stats">Statistics</string>
@@ -20,7 +20,7 @@
     <string name="decks_used">Decks Used:</string>
     <string name="addDeck">Add A Deck</string>
     <string name="title_activity_add_deck">Add A Deck</string>
-    <string name="new_deck">New Deck</string>
+    <string name="new_deck"><u>New Deck</u></string>
     <string name="deck_name">Name</string>
     <string name="save_deck">Save</string>
     <string name="title_activity_manage_cards">Manage Cards</string>
@@ -32,17 +32,17 @@
     <string name="statisticsLabel">Statistics</string>
     <string name="settingsLabel">Settings</string>
     <string name="title_activity_edit_deck">Edit A Deck</string>
-    <string name="edit_deck">Edit Deck</string>
+    <string name="edit_deck"><u>Edit Deck</u></string>
     <string name="next">Next</string>
     <string name="flip">Flip</string>
     <string name="timer_length">Study Session Timer:</string>
     <string name="random_background_color">Random Color Scheme:</string>
     <string name="flip_timeout">Time Until Auto-Flip:</string>
-    <string name="statHeader">Statistics By Date</string>
+    <string name="statHeader"><u>Statistics By Date</u></string>
     <string name="title_activity_edit_card">Edit A Card</string>
     <string name="add_card">Add A Card</string>
     <string name="title_activity_select_deck_to_study">Study</string>
-    <string name="select_a_deck">Select A Deck</string>
+    <string name="select_a_deck"><u>Select A Deck</u></string>
     <string name="defaultTime">0:00</string>
     <string name="timeRemaining">Time Remaining:</string>
     <string name="statisticsDeckName">Deck Name:</string>
@@ -51,7 +51,7 @@
     <string name="numCards">Number of Cards Used:</string>
     <string name="title_activity_statistics_breakdown">Statistics Breakdown</string>
     <string name="done">Done</string>
-    <string name="new_card">New Card</string>
-    <string name="edit_card">Edit Card</string>
+    <string name="new_card"><u>New Card</u></string>
+    <string name="edit_card"><u>Edit Card</u></string>
 
 </resources>

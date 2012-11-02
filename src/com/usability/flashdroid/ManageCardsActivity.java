@@ -7,13 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -64,7 +66,10 @@ public class ManageCardsActivity extends Activity {
         registerForContextMenu(cardList);
         
         TextView textView = (TextView) findViewById(R.id.cardsHeader);
-        textView.setText(this.currentDeck.getName());
+        
+        SpannableString content = new SpannableString(this.currentDeck.getName());
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        textView.setText(content);
     }
 
     @Override
