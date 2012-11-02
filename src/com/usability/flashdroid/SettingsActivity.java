@@ -87,7 +87,7 @@ public class SettingsActivity extends Activity {
 	    	}
 	    	
 	    	case R.id.downButton02: {
-	    		if ((Settings.getStudySessionDuration() / 1000) - 5 >= 0) {
+	    		if ((Settings.getStudySessionDuration() / 1000) - 5 >= 5) {
 	    			int newVal = (int) (((Settings.getStudySessionDuration() / 1000) - 5) % 1000);
 	    			setTimerValueByID(R.id.countdown2, newVal);
 	    		}
